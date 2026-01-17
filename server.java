@@ -2,26 +2,26 @@ import java.io.*;
 import java.net.*;
 
 public class server {
+    public static void main(String[] args) throws IOException
+    {
+          ServerSocket serverSocket = new ServerSocket(2222);
+          System.out.println("Server started..");
 
-    public static void main(String[] args) throws IOException {
-        System.out.println("server started..");
-        ServerSocket server1 = new ServerSocket(22222);
-
-        while (true) {
-            Socket s = server1.accept();
+          while (true) {
+            Socket s = serverSocket.accept() ; 
             ObjectInputStream ois = new ObjectInputStream(s.getInputStream());
             ObjectOutputStream oos = new ObjectOutputStream(s.getOutputStream());
-
             try {
                 Object msg = ois.readObject();
-                System.out.println("From Client: " + msg);
-                String serverMsg = (String) msg;
-                serverMsg = serverMsg.toUpperCase();
-                oos.writeObject(serverMsg);
-            } catch (ClassNotFoundException e) {
-                e.printStackTrace();
+                System.out.println("msg rcv: "+(String)msg);
+                String rtn =(String)msg ; 
+                rtn = rtn.toUpperCase()+"server response";
+                oos.writeObject(rtn);
+            } catch (Exception e) {
+                System.out.println(e);
             }
-        }
-    }
 
+          }
+
+       }
 }
