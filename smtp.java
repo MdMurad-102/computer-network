@@ -25,9 +25,7 @@ public class smtp {
         SSLSocket ssl = (SSLSocket) SSLSocketFactory.getDefault().createSocket("smtp.gmail.com" , 465);
         red  = new BufferedReader(new InputStreamReader(ssl.getInputStream()));
         wrt = new BufferedWriter(new OutputStreamWriter(ssl.getOutputStream())) ; 
-        
         rcv(); // Server greeting
-        
         send("EHLO smtp.gmail.com\r\n");
         for(int i=0; i<9; i++) rcv();
         
