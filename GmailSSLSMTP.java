@@ -39,8 +39,8 @@ public class GmailSSLSMTP {
     private static BufferedWriter writer;
 
     public static void main(String[] args) {
-        String username = "s2210376102@ru.ac.bd";
-        String appPassword = "nkmikthktiqfhupk";
+        String username = "email";
+        String appPassword = "password";
 
         try {
             SSLSocket s = (SSLSocket) SSLSocketFactory.getDefault().createSocket("smtp.gmail.com", 465);
