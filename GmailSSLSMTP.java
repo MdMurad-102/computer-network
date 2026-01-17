@@ -1,16 +1,4 @@
-//  send("EHLO smtp.gmail.com\r\n");              -->        9 lines
-//     send("AUTH LOGIN\r\n");                      -->      1 line
-//     send(username + "\r\n");                    -->      1 line
-//     send(password + "\r\n");                   -->      1 line
-//     send("MAIL FROM:<asif@ru.ac.bd>\r\n");       -->        1 line
-//     send("RCPT TO:<asifzaman3180@gmail.com>\r\n");  -->      1 line
-//     send("DATA\r\n");                -->      1 line
-//     send("FROM: asif@ru.ac.bd\r\n");                            
-//     send("TO: asifzaman3180@gmail.com\r\n");                    
-//     send("Subject: Email test  "\r\n");
-//     send("THIS IS A TEST EMAIL. THANK YOU\r\n");
-//     send(".\r\n");                   -->      1 line
-//     send("QUIT\r\n");
+
 
 import javax.net.ssl.SSLSocket;
 import javax.net.ssl.SSLSocketFactory;
@@ -40,7 +28,7 @@ public class GmailSSLSMTP {
 
     public static void main(String[] args) {
         String username = "email";
-        String appPassword = "password";
+        String appPassword = "password ";
 
         try {
             SSLSocket s = (SSLSocket) SSLSocketFactory.getDefault().createSocket("smtp.gmail.com", 465);
